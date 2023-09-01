@@ -1,37 +1,35 @@
 <?php
 
-class Movie{
+require_once __DIR__.'/classes/Movie.php';
 
-    public $title ;
-    public $genre ;
-    public $actors ;
-    public $language ;
-    public $img ;
+$filmsOne = new Movie('Notting Hill' , 'romantic' , 'Julia Robert , Hugh Grant , Rhys Ifans , Hugh Bonneville , Gina Mckee , Emma McInnerny' , 'English , Italian , Spanish');
+// $filmsOne->title = 'Notting Hill';
+// $filmsOne->genre = 'romantic';
+// $filmsOne->actors = 'Julia Robert , Hugh Grant , Rhys Ifans , Hugh Bonneville , Gina Mckee , Emma McInnerny';
+// $filmsOne->language = 'English , Italian , Spanish';
+// $filmsOne->img = 'http...';
 
-    // public function __construct(
-    //     $genre ,
-    //     $actor , 
-    //     $language , 
-    //     $img
-    // )
-    // {
-    //     $this->genre = $genre;
-    //     $this->actors = $actor;
-    //     $this->language = $language;
-    //     $this->img = $img;
-    // }
-}
+$filmsOne->setActive('active');
 
-$films = new Movie();
-$films->title = 'Notting Hill';
-$films->genre = 'romantic';
-$films->actors = 'Julia Robert , Hugh Grant , Rhys Ifans , Hugh Bonneville , Gina Mckee , Emma McInnerny';
-$films->language = 'English , Italian , Spanish';
-$films->img = 'http...';
+var_dump($filmsOne);
 
-var_dump($films);
+// echo $filmsOne->title;
+echo $filmsOne->getFullInfoFilms();
 
-echo $films->genre;
+echo '<br>';
+
+$filmsTwo = new Movie('Orwell 1984','Drammatico','John Hurt , Suzanna Hamilton , Bob Flag , Rupert Baderman ,, Martha Parsey , Roger Lloyd Pack','English , Italian , Spanish');
+// $filmsTwo->title = 'Orwell 1984';
+// $filmsTwo->genre = 'Drammatico';
+// $filmsTwo->actors = 'John Hurt , Suzanna Hamilton , Bob Flag , Rupert Baderman ,, Martha Parsey , Roger Lloyd Pack';
+// $filmsTwo->language = 'English , Italian , Spanish';
+// $filmsTwo->img = 'http...';
+
+var_dump($filmsTwo);
+
+echo $filmsTwo->getFullInfoFilms();
+
+
 
 
 
