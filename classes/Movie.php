@@ -4,7 +4,7 @@ class Movie
 {
     // ATTRIBUTI
     public $title ;
-    public $genre ;
+    public $genres = [];
     public $actors ;
     public $language ;
     public $img ;
@@ -12,41 +12,30 @@ class Movie
     
     // COSTRUTTORE
     public function __construct(
-        $_genre ,
+        $_title,
+        $_genres,
         $_actor , 
         $_language , 
-        $_img
+        // $_img
     )
     {
-        $this->genre = $_genre;
+        $this->title = $_title;
+        $this->genres = $_genres;
         $this->actors = $_actor;
         $this->language = $_language;
-        $this->img = $_img;
+        // $this->img = $_img;
     }
 
     // METODI
-    public function getFullInfoFilms()
-    {
-        return $this->title.' '.$this->genre;
+    public function getTitle() {
+        return $this->title;
     }
 
-    /*
-       Getter dell'attributo active
-    */
-    public function getActive()
-    {
-        return $this->active;
+    public function getGenres() {
+        return $this->genres;
     }
-    /*
-      Setter dell'attributo active
-      Mi aspetto che il parametro active sia un booleano
-      Se non è un boolenao non faccio niente
-    */
-    public function setActive($active)
-    {
-        if(is_bool($active)){
-            $this->active = $active;
-        }
-        
+
+    public function addGenre($genre) {
+        $this->genres[] = $genre;
     }
 }
