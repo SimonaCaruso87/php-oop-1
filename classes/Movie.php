@@ -1,41 +1,103 @@
-<?php
-
+<?php 
 class Movie
 {
     // ATTRIBUTI
-    public $title ;
-    public $genres = [];
-    public $actors ;
-    public $language ;
-    public $img ;
+    private $title;
+    private $genres = [];
+    private $actors = [];
+    private $language;
+    private $img;
+    private $plot;
     private $active;
-    
+
     // COSTRUTTORE
     public function __construct(
-        $_title,
-        $_genres,
-        $_actor , 
-        $_language , 
-        // $_img
-    )
-    {
-        $this->title = $_title;
-        $this->genres = $_genres;
-        $this->actors = $_actor;
-        $this->language = $_language;
-        // $this->img = $_img;
+        string $_title,
+        array $_genres = [],
+        array $_actors = [],
+        string $_language = '',
+        string $_img = '',
+        string $_plot = ''
+    ) {
+        $this->setTitle($_title);
+        $this->setGenres($_genres);
+        $this->setActors($_actors);
+        $this->setLanguage($_language);
+        $this->setImg($_img);
+        $this->setPlot($_plot);
     }
 
-    // METODI
-    public function getTitle() {
+    // METODI GETTER
+    public function getTitle()
+    {
         return $this->title;
     }
 
-    public function getGenres() {
+    public function getGenres()
+    {
         return $this->genres;
     }
 
-    public function addGenre($genre) {
-        $this->genres[] = $genre;
+    public function getActors()
+    {
+        return $this->actors;
+    }
+
+    public function getLanguage()
+    {
+        return $this->language;
+    }
+
+    public function getImg()
+    {
+        return $this->img;
+    }
+
+    public function getPlot()
+    {
+        return $this->plot;
+    }
+
+    // METODI SETTER
+    public function setTitle(string $title)
+    {
+        if (!empty($title)) {
+            $this->title = $title;
+        } else {
+            throw new InvalidArgumentException('Il titolo non può essere vuoto.');
+        }
+    }
+
+    public function setGenres(array $genres)
+    {
+        $this->genres = $genres;
+    }
+
+    public function setActors(array $actors)
+    {
+        $this->actors = $actors;
+    }
+
+    public function setLanguage(string $language)
+    {
+        $this->language = $language;
+    }
+
+    public function setImg(string $img)
+    {
+        $this->img = $img;
+    }
+
+    public function setPlot(string $plot)
+    {
+        $this->plot = $plot;
+    }
+
+    // METODI
+    public function addGenre(string $genre)
+    {
+        if (!in_array($genre, $this->genres)) {
+            $this->genres[] = $genre;
+        }
     }
 }

@@ -1,0 +1,24 @@
+body {
+    background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20190222/ourmid/pngtree-two-color-gradient-universal-background-material-color-matching-backgroundtwo-tone-image_51848.jpg'); /* Sostituisci 'sfondo.jpg' con il percorso del tuo sfondo */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    color: #ffffff; /* Colore del testo del titolo */
+}
+
+.table {
+    background-color: rgba(255, 255, 255, 0.7); /* Sfondo della tabella con trasparenza */
+}
+
+/* Colori dei link */
+th {
+    cursor: pointer;
+    color: #007bff; /* Colore predefinito dei link di Bootstrap */
+}
+
+/* Colore dei link al passaggio del mouse */
+th:hover {
+    color: #0056b3; /* Colore del link al passaggio del mouse */
+}
