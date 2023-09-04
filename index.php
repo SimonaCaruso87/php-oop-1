@@ -53,32 +53,10 @@ $movies = [
 
     <body>
     <div class="container mt-5">
-        <h1>Dettagli del Film</h1>
+        <h1 class="text-center">Dettagli del Film</h1>
         <div class="row">
             <div class="col-md-4">
-                <!-- Aggiungi il carousel qui -->
-                <div id="filmCarousel" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <?php foreach ($movies as $key => $movie): ?>
-                            <div class="carousel-item <?= $key === 0 ? 'active' : '' ?>">
-                                <img src="<?= $movie->getImg()?>" class="d-block w-100" alt="Poster del Film">
-                                <div class="carousel-caption">
-                                    <h3><?= $movie->getTitle() ?></h3>
-                                    <p><?= implode(', ', $movie->getGenres()) ?></p>
-                                </div>
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
-                    <a class="carousel-control-prev" href="#filmCarousel" role="button" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#filmCarousel" role="button" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </a>
-                </div>
-                <!-- Fine del carousel -->
+                <img src="<?= $movies[0]->getImg()?>" alt="Poster del Film" class="img-fluid">
             </div>
             <div class="col-md-8">
                 <table class="table rounded-5">
