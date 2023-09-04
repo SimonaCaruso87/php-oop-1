@@ -25,6 +25,7 @@ class Movie
         $this->setLanguage($_language);
         $this->setImg($_img);
         $this->setPlot($_plot);
+        
     }
 
     // METODI GETTER

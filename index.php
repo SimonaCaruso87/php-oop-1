@@ -55,10 +55,10 @@ $movies = [
     <div class="container mt-5">
         <h1 class="text-center">Dettagli del Film</h1>
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-2">
                 <img src="<?= $movies[0]->getImg()?>" alt="Poster del Film" class="img-fluid">
             </div>
-            <div class="col-md-8">
+            <div class="col-md-10">
                 <table class="table rounded-5">
                     <tbody>
                         <tr>
